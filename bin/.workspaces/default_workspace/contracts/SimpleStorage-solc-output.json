@@ -1,0 +1,28 @@
+{
+    "sources": {
+        "/home/thejuliamathias/Projects/personal/learning-sol/.workspaces/default_workspace/contracts/SimpleStorage.sol": {
+            "ast": {
+                "absolutePath": "/home/thejuliamathias/Projects/personal/learning-sol/.workspaces/default_workspace/contracts/SimpleStorage.sol",
+                "exportedSymbols": {},
+                "id": 2,
+                "license": "MIT",
+                "nodeType": "SourceUnit",
+                "nodes": [
+                    {
+                        "id": 1,
+                        "literals": [
+                            "solidity",
+                            "^",
+                            "0.8",
+                            ".8"
+                        ],
+                        "nodeType": "PragmaDirective",
+                        "src": "32:23:0"
+                    }
+                ],
+                "src": "32:144:0"
+            },
+            "id": 0
+        }
+    }
+}
