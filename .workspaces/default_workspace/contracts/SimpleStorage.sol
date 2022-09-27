@@ -41,4 +41,9 @@ contract SimpleStorage {
     function retrieve() public view returns (uint256) {
         return favoriteNumber;
     }
+
+    // a pure function also disallows you to read from blockchain state
+    function add() public pure returns (uint256) {
+        return (1 + 1);
+    }
 }
