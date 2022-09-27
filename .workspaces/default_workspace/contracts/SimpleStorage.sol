@@ -18,15 +18,20 @@ contract SimpleStorage {
     // address myAddress = 0x1846188e76274b6dDa5A23B755E527C800d8F382;
     // bytes32 favoritesBytes = "cat";
 
-    // State Variable Visibility states: public, private, internal
-    // docs: https://docs.soliditylang.org/en/latest/contracts.html#visibility-and-getters
-
     uint256 public favoriteNumber; // if you don't assign a value to a uint, it initializes as 0
-
-    // Function Visibility States: public, private, internal, external
-    //docs: https://docs.soliditylang.org/en/latest/contracts.html#visibility-and-getters
 
     function store(uint256 _favoriteNumber) public {
         favoriteNumber = _favoriteNumber;
+    }
+
+    // if a function is more computationally complex, the fees will also be more
+    // expensive. So this function is more expensive than the one above.
+    function store_and_add(uint256 _favoriteNumber) public {
+        favoriteNumber = _favoriteNumber;
+        favoriteNumber = favoriteNumber + 1;
+    }
+
+    function retrieve() public view returns (uint256) {
+        return favoriteNumber;
     }
 }
