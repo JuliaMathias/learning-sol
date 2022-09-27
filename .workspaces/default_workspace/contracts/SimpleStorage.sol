@@ -24,13 +24,20 @@ contract SimpleStorage {
         favoriteNumber = _favoriteNumber;
     }
 
+    uint256 public favoriteNumberPlusOne;
+
     // if a function is more computationally complex, the fees will also be more
     // expensive. So this function is more expensive than the one above.
     function store_and_add(uint256 _favoriteNumber) public {
         favoriteNumber = _favoriteNumber;
-        favoriteNumber = favoriteNumber + 1;
+        favoriteNumberPlusOne = favoriteNumber + 1;
     }
 
+    // there are two keywords in solidity that denote that you don't have to spend gas to
+    // call them. Those are view and pure.
+
+    // A view function disallows any modifications of state, so you're only allowed to
+    // read from it.
     function retrieve() public view returns (uint256) {
         return favoriteNumber;
     }
