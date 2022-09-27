@@ -20,6 +20,8 @@ contract SimpleStorage {
 
     uint256 public favoriteNumber; // if you don't assign a value to a uint, it initializes as 0
 
+    //functions
+
     function store(uint256 _favoriteNumber) public {
         favoriteNumber = _favoriteNumber;
     }
@@ -46,4 +48,14 @@ contract SimpleStorage {
     function add() public pure returns (uint256) {
         return (1 + 1);
     }
+
+    // but if a gas-calling function calls a view or pure function, then it will cost
+    // gas to call them
+
+    struct People {
+        uint256 favoriteNumber;
+        string name;
+    }
+
+    People public person = People({favoriteNumber: 8, name: "Julia"});
 }
