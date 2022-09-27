@@ -18,7 +18,7 @@ contract SimpleStorage {
     // address myAddress = 0x1846188e76274b6dDa5A23B755E527C800d8F382;
     // bytes32 favoritesBytes = "cat";
 
-    uint256 public favoriteNumber; // if you don't assign a value to a uint, it initializes as 0
+    uint256 favoriteNumber; // if you don't assign a value to a uint, it initializes as 0
 
     //functions
 
@@ -57,5 +57,12 @@ contract SimpleStorage {
         string name;
     }
 
-    People public person = People({favoriteNumber: 8, name: "Julia"});
+    // this is a dynamic array, because the size of the array is not fixed and not
+    // specified in the declaration.
+    People[] public people;
+
+    function addPerson(string memory _name, uint256 _favoriteNumber) public {
+        People memory newPerson = People(_favoriteNumber, _name);
+        people.push(newPerson);
+    }
 }
