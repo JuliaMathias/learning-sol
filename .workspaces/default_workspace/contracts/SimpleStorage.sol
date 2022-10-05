@@ -61,6 +61,7 @@ contract SimpleStorage {
     // specified in the declaration.
     People[] public people;
 
+    // calldata, memory and storage
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         People memory newPerson = People(_favoriteNumber, _name);
         people.push(newPerson);
