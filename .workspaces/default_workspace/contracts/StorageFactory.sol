@@ -14,4 +14,20 @@ contract StorageFactory {
         SimpleStorage simpleStorage = new SimpleStorage();
         simpleStorageArray.push(simpleStorage);
     }
+
+    function sfStore(uint256 _simpleStorageIndex, uint256 _simpleStorageNumber)
+        public
+    {
+        // Fetch the address of the simple storage from the array
+        SimpleStorage simpleStorage = simpleStorageArray[_simpleStorageIndex];
+        // Store the number in the simple storage
+        simpleStorage.store(_simpleStorageNumber);
+    }
+
+    function sfGet(uint256 _simpleStorageIndex) public view returns (uint256) {
+        // Fetch the address of the simple storage from the array
+        SimpleStorage simpleStorage = simpleStorageArray[_simpleStorageIndex];
+        // Get the number from the simple storage
+        return simpleStorage.retrieve();
+    }
 }
